@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Список объявлений{% endblock %}
+
+{% block content %}
+    <h1>Объявления</h1>
+    <div class="ads-container">
+        {% for ad in ads %}
+            <div class="ad-card">
+                <h2><a href="{% url 'ad-detail' ad.pk %}">{{ ad.title }}</a></h2>
+                <p>{{ ad.description|truncatechars:100 }}</p>
+                <p><strong>Цена:</strong> {{ ad.price }} ₽</p>
+                <p><strong>Автор:</strong> <a href="{% url 'user_profile' ad.author.pk %}">{{ ad.author.username }}</a></p>
+            </div>
+        {% empty %}
+            <p>Объявлений пока нет.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

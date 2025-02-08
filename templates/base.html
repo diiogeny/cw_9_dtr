@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Доска объявлений{% endblock %}</title>
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="{% static 'js/comments.js' %}" defer></script>
+    <script src="{% static 'js/moderation.js' %}" defer></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{% url 'ad-list' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo" class="logo-img">
+                    <span class="site-title">Доска объявлений</span>
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="{% url 'ad-list' %}">Главная</a></li>
+                <li><a href="{% url 'ad-create' %}">Создать объявление</a></li>
+                {% if user.is_authenticated and user.username %}
+    <li><a href="{% url 'user-profile' username=user.username %}">👤 {{ user.username }}</a></li>
+{% else %}
+    <li><a href="{% url 'login' %}">Вход</a></li>
+    <li><a href="{% url 'register' %}">Регистрация</a></li>
+{% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% include 'footer.html' %}
+    </footer>
+
+</body>
+</html>

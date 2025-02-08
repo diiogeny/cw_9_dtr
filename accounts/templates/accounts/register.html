@@ -1,0 +1,33 @@
+<form method="post">
+    {% csrf_token %}
+
+    <label for="username">Логин:</label>
+    <input type="text" name="username" required>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" required>
+
+    <label for="phone">Телефон:</label>
+    <input type="tel" name="phone" required pattern="\+996 \d{3} \d{3} \d{3}" placeholder="+996 777 123 456">
+
+
+    <label for="password1">Пароль:</label>
+    <input type="password" name="password1" required>
+
+    <label for="password2">Подтвердите пароль:</label>
+    <input type="password" name="password2" required>
+
+    <button type="submit">Зарегистрироваться</button>
+</form>
+
+<script>
+document.getElementById('phone').addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.startsWith('996')) {
+        value = '+' + value;
+    } else {
+        value = '+996' + value;
+    }
+    e.target.value = value.replace(/(\+996)(\d{3})(\d{3})(\d{3})/, '$1 $2 $3 $4');
+});
+</script>

@@ -1,0 +1,12 @@
+<ul id="comments-list">
+    {% for comment in comments %}
+        <li>
+            <strong>{{ comment.author.username }}</strong>: {{ comment.text }}
+            {% if comment.author == user %}
+                <button class="delete-comment" data-id="{{ comment.id }}">Удалить</button>
+            {% endif %}
+        </li>
+    {% empty %}
+        <p>Комментариев пока нет.</p>
+    {% endfor %}
+</ul>

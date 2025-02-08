@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Профиль пользователя {{ profile_user.username }}</h2>
+<p>Телефон: {{ profile_user.phone }}</p>
+
+<h3>Объявления пользователя</h3>
+<ul>
+    {% for ad in ads %}
+        <li><a href="{% url 'ad-detail' ad.id %}">{{ ad.title }}</a> - {{ ad.price }} руб.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Модерация объявлений{% endblock %}
+
+{% block content %}
+    <h1>Модерация объявлений</h1>
+    <ul>
+        {% for ad in ads %}
+            <li>
+                <strong>{{ ad.title }}</strong> от {{ ad.author.username }}
+                <p>{{ ad.description|truncatechars:100 }}</p>
+                <button class="approve-ad" data-id="{{ ad.id }}">✅ Одобрить</button>
+                <button class="reject-ad" data-id="{{ ad.id }}">❌ Отклонить</button>
+            </li>
+        {% empty %}
+            <p>Нет объявлений на модерации.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

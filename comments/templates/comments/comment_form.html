@@ -1,0 +1,5 @@
+<form id="comment-form">
+    {% csrf_token %}
+    <textarea id="comment-text" name="text" placeholder="Оставьте комментарий..." required></textarea>
+    <button type="submit">Отправить</button>
+</form>

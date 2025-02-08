@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}{{ ad.title }}{% endblock %}
+
+{% block content %}
+    <div class="ad-container">
+        <h1>{{ ad.title }}</h1>
+        {% if ad.image %}
+            <img src="{{ ad.image.url }}" alt="{{ ad.title }}">
+        {% endif %}
+        <p><strong>Описание:</strong> {{ ad.description }}</p>
+        <p><strong>Цена:</strong> {{ ad.price }} руб.</p>
+        <p><strong>Категория:</strong> {{ ad.category.name }}</p>
+        <p><strong>Автор:</strong> <a href="{% url 'profile' ad.author.id %}">{{ ad.author.username }}</a></p>
+
+        {% if request.user == ad.author %}
+            <a href="{% url 'ad-edit' ad.id %}" class="btn">Редактировать</a>
+            <a href="{% url 'ad-delete' ad.id %}" class="btn btn-danger">Удалить</a>
+        {% endif %}
+    </div>
+
+
+    <h2>Комментарии</h2>
+    {% include 'comments/comments_list.html' %}
+    {% if user.is_authenticated %}
+        {% include 'comments/comment_form.html' %}
+    {% else %}
+        <p><a href="{% url 'login' %}">Войдите</a>, чтобы оставить комментарий.</p>
+    {% endif %}
+{% endblock %}

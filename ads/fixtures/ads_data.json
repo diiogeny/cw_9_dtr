@@ -1,0 +1,152 @@
+[
+    {
+        "model": "ads.ad",
+        "pk": 1,
+        "fields": {
+            "title": "Продам велосипед",
+            "description": "Горный велосипед в отличном состоянии.",
+            "price": 25000.00,
+            "status": "published",
+            "image": "images/bike.jpeg",
+            "author": 1,
+            "category": 1,
+            "created_at": "2025-02-08T12:00:00Z",
+            "updated_at": "2025-02-08T12:05:00Z"
+        }
+    },
+    {
+        "model": "ads.ad",
+        "pk": 2,
+        "fields": {
+            "title": "Сдам квартиру",
+            "description": "Однокомнатная квартира в центре города. Все удобства.",
+            "price": 35000.00,
+            "status": "published",
+            "image": "images/apartment.jpeg",
+            "author": 2,
+            "category": 2,
+            "created_at": "2025-02-07T10:30:00Z",
+            "updated_at": "2025-02-07T10:35:00Z"
+        }
+    },
+    {
+        "model": "ads.ad",
+        "pk": 3,
+        "fields": {
+            "title": "Продаю ноутбук",
+            "description": "Ноутбук ASUS, процессор i7, 16 ГБ RAM, 512 ГБ SSD.",
+            "price": 70000.00,
+            "status": "published",
+            "image": "images/laptop.png",
+            "author": 3,
+            "category": 3,
+            "created_at": "2025-02-06T08:45:00Z",
+            "updated_at": "2025-02-06T08:50:00Z"
+        }
+    },
+    {
+        "model": "ads.ad",
+        "pk": 4,
+        "fields": {
+            "title": "Айфон 13 Pro Max",
+            "description": "Новый, запечатанный, гарантия от Apple.",
+            "price": 100000.00,
+            "status": "published",
+            "image": "images/iphone.jpeg",
+            "author": 1,
+            "category": 4,
+            "created_at": "2025-02-05T15:00:00Z",
+            "updated_at": "2025-02-05T15:05:00Z"
+        }
+    },
+    {
+        "model": "ads.ad",
+        "pk": 5,
+        "fields": {
+            "title": "Автомобиль Toyota Camry",
+            "description": "2019 год, пробег 50 000 км, в идеальном состоянии.",
+            "price": 2500000.00,
+            "status": "published",
+            "image": "images/toyota.jpeg",
+            "author": 4,
+            "category": 5,
+            "created_at": "2025-02-04T12:20:00Z",
+            "updated_at": "2025-02-04T12:25:00Z"
+        }
+    },
+    {
+        "model": "ads.ad",
+        "pk": 6,
+        "fields": {
+            "title": "Гитара Fender",
+            "description": "Электрогитара Fender Stratocaster, американская сборка.",
+            "price": 80000.00,
+            "status": "published",
+            "image": "images/guitar.jpeg",
+            "author": 5,
+            "category": 6,
+            "created_at": "2025-02-03T09:40:00Z",
+            "updated_at": "2025-02-03T09:45:00Z"
+        }
+    },
+    {
+        "model": "ads.ad",
+        "pk": 7,
+        "fields": {
+            "title": "Игровая приставка PlayStation 5",
+            "description": "Полный комплект, 2 геймпада, 5 игр в подарок.",
+            "price": 60000.00,
+            "status": "published",
+            "image": "images/ps5.jpg",
+            "author": 2,
+            "category": 7,
+            "created_at": "2025-02-02T14:10:00Z",
+            "updated_at": "2025-02-02T14:15:00Z"
+        }
+    },
+    {
+        "model": "ads.ad",
+        "pk": 8,
+        "fields": {
+            "title": "Курсы программирования",
+            "description": "Обучение Python с нуля. 2 месяца, онлайн.",
+            "price": 15000.00,
+            "status": "published",
+            "image": "images/python-course.png",
+            "author": 6,
+            "category": 8,
+            "created_at": "2025-02-01T16:50:00Z",
+            "updated_at": "2025-02-01T16:55:00Z"
+        }
+    },
+    {
+        "model": "ads.ad",
+        "pk": 9,
+        "fields": {
+            "title": "Продам холодильник",
+            "description": "Samsung, двухкамерный, No Frost, 2022 год выпуска.",
+            "price": 45000.00,
+            "status": "published",
+            "image": "images/fridge.jpeg",
+            "author": 7,
+            "category": 9,
+            "created_at": "2025-01-31T11:30:00Z",
+            "updated_at": "2025-01-31T11:35:00Z"
+        }
+    },
+    {
+        "model": "ads.ad",
+        "pk": 10,
+        "fields": {
+            "title": "Кроссовки Nike",
+            "description": "Модель Air Force 1, оригинал, размер 42.",
+            "price": 12000.00,
+            "status": "published",
+            "image": "images/nike.jpeg",
+            "author": 8,
+            "category": 10,
+            "created_at": "2025-01-30T13:15:00Z",
+            "updated_at": "2025-01-30T13:20:00Z"
+        }
+    }
+]

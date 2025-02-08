@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Профиль {{ user.username }}{% endblock %}
+
+{% block content %}
+    <h1>Профиль {{ user.username }}</h1>
+    <p><strong>Телефон:</strong> {{ user.phone }}</p>
+    {% if request.user == user %}
+        <a href="{% url 'profile-edit' %}">Редактировать профиль</a>
+    {% endif %}
+
+    <h2>Мои объявления</h2>
+    <ul>
+        {% for ad in user.ads.all %}
+            <li>
+                <a href="{% url 'ad-detail' ad.pk %}">{{ ad.title }}</a> ({{ ad.get_status_display }})
+                <a href="{% url 'ad-edit' ad.pk %}">✏️</a>
+                <a href="{% url 'ad-delete' ad.pk %}">🗑</a>
+            </li>
+        {% empty %}
+            <p>Объявлений пока нет.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
