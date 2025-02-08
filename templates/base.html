@@ -24,7 +24,7 @@
                 <li><a href="{% url 'ad-list' %}">Главная</a></li>
                 <li><a href="{% url 'ad-create' %}">Создать объявление</a></li>
                 {% if user.is_authenticated and user.username %}
-    <li><a href="{% url 'user-profile' username=user.username %}">👤 {{ user.username }}</a></li>
+    <li><a href="{% url 'user-profile' username=user.username %}"> Профиль {{ user.username }}</a></li>
 {% else %}
     <li><a href="{% url 'login' %}">Вход</a></li>
     <li><a href="{% url 'register' %}">Регистрация</a></li>
